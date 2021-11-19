@@ -9,6 +9,8 @@ def printCells():
             print(str(cells[j][i].num),end="\t")
         print("")
 
+def solveSudoku():
+    pass
 
 class Cell:
     def __init__(self):
@@ -38,4 +40,21 @@ for i in range(9):
 
         cells[j][i].block = [x,y]
 
-printCells()
+#Main Loop for commands
+close = False;
+
+while(not close):
+    print("Write 'help' for help...")
+    inpt = input("#: ")
+    if (inpt == "close"):
+        close = True
+    elif (inpt == "help"):
+        print("'help' = get help")
+        print("'close' = closes terminal")
+        print("'show' = shows sudoku board")
+    elif (inpt == "show"):
+        printCells()
+    elif (inpt == "solve"):
+        solveSudoku()
+    else:
+        print("I didn't understand that")
